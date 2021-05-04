@@ -136,7 +136,9 @@ export default defineComponent({
   margin: 100px 0 50px;
 
   @media (min-width: 1024px) {
+    border-radius: 0;
     margin: 0;
+    width: auto;
     height: 100%;
   }
 }
