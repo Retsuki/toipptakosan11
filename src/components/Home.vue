@@ -118,13 +118,27 @@ export default defineComponent({
 }
 
 .introduction {
-  background-color: #000;
-  height: 600px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    height: 600px;
+  }
 }
 
 .selfImage {
-  height: 100%;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin: 100px 0 50px;
+
+  @media (min-width: 1024px) {
+    margin: 0;
+    height: 100%;
+  }
 }
 
 .selfIntro {
@@ -135,8 +149,15 @@ export default defineComponent({
   align-items: center;
 
   & > ol > li {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 1024px) {
+    & > ol > li {
     font-size: 28px;
     line-height: 1.5;
+  }
   }
 }
 
