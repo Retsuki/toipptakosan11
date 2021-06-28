@@ -75,7 +75,7 @@ export default defineComponent({
         term: '2020/05/08 ~ 現在',
         technology: 'Nuxt, Firebase, Algolia',
         position: 'プロジェクトリーダー兼ディペロッパー兼エンジニア採用',
-        worked: '認証周り, Bigquery連携, チャット機能, 検索機能, Admin管理機能'
+        worked: '認証周り, Bigquery連携, チャット機能, 検索機能, Admin管理機能, GCP（cloud build, cloud run）'
       },
 
       {
