@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "firebase": "^8.4.3",
-    "vue": "^3.0.5",
     "vite": "^2.2.3",
+    "vue": "^3.0.5",
+    "vue-router": "4",
     "vue-tsc": "^0.0.24"
   },
   "devDependencies": {
