@@ -8,6 +8,7 @@
     "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore ."
   },
   "dependencies": {
+    "axios": "^0.22.0",
     "firebase": "^8.4.3",
     "vite": "^2.2.3",
     "vue": "^3.0.5",

@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <o-global-header />
-    <router-view></router-view>
-  </div>
+  <o-global-header />
+  <router-view></router-view>
 </template>
 
 <script lang="ts">
@@ -21,5 +19,9 @@ export default defineComponent({
 #app {
   width: 100%;
   height: 100%;
+  max-width: 1260px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: auto;
 }
 </style>
