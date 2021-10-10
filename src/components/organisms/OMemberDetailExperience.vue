@@ -5,7 +5,7 @@
     <div :class="$style.contents">
       <ul>
         <li 
-        v-for="{ company, describe, occupation }, i of member.experience" 
+        v-for="{ company, describe, occupation, skills }, i of member.experience" 
         :key="i"
         >
           <div :class="$style.point" />
@@ -14,6 +14,11 @@
               <div :class="$style.companyName">{{ company }}</div>
               <div :class="$style.companyPosition">{{ occupation[0] }}</div>
               <div :class="$style.companyDescription">{{ describe }}</div>
+              <ul :class="$style.companySkills">
+                <li v-for="skill of skills" :key="`${company}-${skill}`">
+                  <span>{{ skill }}</span>
+                </li>
+              </ul>
             </div>
           </div>
         </li>
@@ -81,6 +86,7 @@ export default defineComponent({
 
 .cardContents {
   padding-left: 84px;
+  padding-bottom: 40px;
 }
 
 .companyName {
@@ -95,8 +101,28 @@ export default defineComponent({
 .companyDescription {
   font-size: 1rem;
   font-weight: normal;
-  min-height: 100px;
+  min-height: 45px;
   margin-top: 11px;
-  padding-bottom: 40px;
+}
+
+.companySkills {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > li {
+    margin: 0 10px;
+
+    & > span {
+      border-radius: 25px;
+      font-size: 12px;
+      background-color: #666666;
+      color: #fff;
+      padding: 5px 10px 5px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 }
 </style>
