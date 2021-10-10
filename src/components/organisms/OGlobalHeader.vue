@@ -1,5 +1,6 @@
 <template>
   <header :class="$style.wrapper">
+    <div :class="$style.headerContents">
       <router-link to="/" :class="$style.logo">Rちゃんワールド</router-link>
 
       <div :class="$style.rightContents">
@@ -10,7 +11,8 @@
           <!-- <li><router-link to="/member" :class="$style.link">about</router-link></li> -->
         </ul>
       </div>
-    </header>
+    </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -25,10 +27,15 @@ export default defineComponent({
 
 <style lang="scss" module>
 .wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
   height: 80px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.headerContents {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;

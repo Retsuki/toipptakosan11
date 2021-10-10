@@ -32,6 +32,7 @@ export default defineComponent({
 <style lang="scss" module>
 .wrapper {
   margin: 0 auto;
+  margin-bottom: 200px;
 }
 
 .hello {

@@ -125,7 +125,7 @@ export default defineComponent({
 .wrapper {
   width: 100%;
   height: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 .header {

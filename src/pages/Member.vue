@@ -85,6 +85,7 @@ export default defineComponent({
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 60px;
+  margin-bottom: 200px;
 }
 
 .card {
