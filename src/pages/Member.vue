@@ -8,16 +8,18 @@
         :key="id"
         :class="$style.card"
       >
-        <img :src="profile_image" :class="$style.profileImage">
-        <div :class="$style.contents">
-          <div :class="$style.name">{{ name }}</div>
-          <ul>
-            <li>職種: {{ occupation[0] }}</li>
-            <li>経験年数: {{ experience_year }}年</li>
-            <li>勤務先: {{ company }}</li>
-            <li>最終更新日: {{ updatedAt }}</li>
-          </ul>
-        </div>
+        <router-link :to="`/member/${id}`" :class="$style.cardContent">
+          <img :src="profile_image" :class="$style.profileImage">
+          <div :class="$style.contents">
+            <div :class="$style.name">{{ name }}</div>
+            <ul>
+              <li>職種: {{ occupation[0] }}</li>
+              <li>経験年数: {{ experience_year }}年</li>
+              <li>勤務先: {{ company }}</li>
+              <li>最終更新日: {{ updatedAt }}</li>
+            </ul>
+          </div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -31,6 +33,17 @@ import axios from 'axios';
 export default defineComponent({
   setup () {
     const members = ref([
+      {
+          "id": "00-ieizjb",
+          "updatedAt": "2021-10-09T16:01:04.582Z",
+          "name": "Rちゃん",
+          "occupation": [
+              "フルスタックエンジニア"
+          ],
+          "company": "Scheeme株式会社",
+          "experience_year": 3,
+          "profile_image": 'src/assets/images/me.jpg'
+      },
       {
           "id": "00-ieizjb",
           "updatedAt": "2021-10-09T16:01:04.582Z",
@@ -67,15 +80,25 @@ export default defineComponent({
 .wrapper {
   width: 100%;
   height: 100%;
+  max-width: 1084px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 60px;
 }
 
 .card {
+  margin-bottom: 20px;
+}
+
+.cardContent {
   display: grid;
   grid-template-columns: 84px calc(100% - 84px);
   padding: 20px 20px 10px 20px;
   border: 1px solid #efefef;
   border-radius: 14px;
   box-shadow: 10px 5px 5px #dddddd;
+  color: #000;
 }
 
 .profileImage {
