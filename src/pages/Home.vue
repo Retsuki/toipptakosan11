@@ -2,16 +2,16 @@
   <main :class="$style.wrapper">
     <div :class="$style.hello">   
       <div :class="$style.container">
-        <h1>RちゃんWorld</h1>
-        <p>We are the ones who give people big dreams and make them come true.</p>
+        <h1>R - World</h1>
+        <p>Let them draw big dreams. Make big dreams come true.</p>
       </div>
     </div>
 
     <section :class="$style.section">
       <h2>Mission</h2>
-      <p>多くの挑戦者に自由で大きな夢を描かせる</p>
+      <p>挑戦者に自由で大きな夢を描かせ、それを実現させる</p>
       <h3>Organization</h3>
-      <p>Rちゃんが出会ってきた曲者たちの集まり</p>
+      <p>Rちゃんが出会ってきた愉快な曲者たちの集まり</p>
     </section>
   </main>
 </template>

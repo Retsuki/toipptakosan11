@@ -9,7 +9,7 @@
         :class="$style.card"
       >
         <router-link :to="`/member/${id}`" :class="$style.cardContent">
-          <img :src="profile_image" :class="$style.profileImage">
+          <img :src="profile_image.url" :class="$style.profileImage">
           <div :class="$style.contents">
             <div :class="$style.name">{{ name }}</div>
             <ul>
@@ -32,43 +32,20 @@ import axios from 'axios';
 
 export default defineComponent({
   setup () {
-    const members = ref([
-      {
-          "id": "00-ieizjb",
-          "updatedAt": "2021-10-09T16:01:04.582Z",
-          "name": "Rちゃん",
-          "occupation": [
-              "フルスタックエンジニア"
-          ],
-          "company": "Scheeme株式会社",
-          "experience_year": 3,
-          "profile_image": 'src/assets/images/me.jpg'
-      },
-      {
-          "id": "00-ieizjb",
-          "updatedAt": "2021-10-09T16:01:04.582Z",
-          "name": "Rちゃん",
-          "occupation": [
-              "フルスタックエンジニア"
-          ],
-          "company": "Scheeme株式会社",
-          "experience_year": 3,
-          "profile_image": 'src/assets/images/me.jpg'
-      }
-    ])
-    // const getMemberMeta = async () => {
-    //   const res = await axios({
-    //     method: 'GET',
-    //     url: 'https://toipptakosan11.microcms.io/api/v1/member-meta',
-    //     headers: {
-    //       'X-API-KEY': '1c2b6719-9d1e-4b97-8f0d-9db1e28e1b15'
-    //     }
-    //   })
+    const members = ref([])
+    const getMemberMeta = async () => {
+      const res: any = await axios({
+        method: 'GET',
+        url: 'https://toipptakosan11.microcms.io/api/v1/member-meta',
+        headers: {
+          'X-API-KEY': '1c2b6719-9d1e-4b97-8f0d-9db1e28e1b15'
+        }
+      })
 
-    //   members.value = res.data
-    // }
+      members.value = res.data.contents
+    }
 
-    // onMounted(getMemberMeta)
+    onMounted(getMemberMeta)
     return {
       members
     }

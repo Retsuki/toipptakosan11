@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.wrapper">
+  <div v-if="member" :class="$style.wrapper">
     <div :class="$style.header">
       <div :class="$style.headerContent">
         <img :src="member.profile_image.url" alt="profile image">
@@ -20,10 +20,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import OMemberDetailExperience from '../components/organisms/OMemberDetailExperience.vue'
+import axios from 'axios'
+import { defineComponent, onMounted, ref } from 'vue'
 import OMemberDetailSelfIntroduction from '../components/organisms/OMemberDetailSelfIntroduction.vue'
+import OMemberDetailExperience from '../components/organisms/OMemberDetailExperience.vue'
 import OMemberDetailSkills from '../components/organisms/OMemberDetailSkills.vue'
+import { useRoute } from 'vue-router'
 
 export default defineComponent({
   components: { 
@@ -32,88 +34,24 @@ export default defineComponent({
     OMemberDetailSkills
   },
   setup () {
-    const member = ref({
-      "id": "00-ieizjb",
-      "createdAt": "2021-10-09T16:01:04.582Z",
-      "updatedAt": "2021-10-10T10:08:20.032Z",
-      "publishedAt": "2021-10-09T16:01:04.582Z",
-      "revisedAt": "2021-10-10T10:08:20.032Z",
-      "name": "Rちゃん",
-      "occupation": [
-          "ソフトウェアエンジニア"
-      ],
-      "self_introduction": "我輩は神なのである！",
-      "company": "Scheeme株式会社",
-      "experience_year": 3,
-      "profile_image": {
-          "url": "https://images.microcms-assets.io/assets/9421560ec69942e593804ba2141f0553/c2d1b5de05e04e5ba33e73501c628391/IMG_2893.JPG",
-          "height": 1104,
-          "width": 828
-      },
-      "sns": {
-          "fieldId": "object",
-          "facebook": "https://www.facebook.com/profile.php?id=100007980480408",
-          "twitter": "https://twitter.com/duz_mk",
-          "github": "https://github.com/Retsuki"
-      },
-      "experience": [
-          {
-              "fieldId": "career",
-              "company": "Scheeme株式会社",
-              "from": "2020-05-07T15:00:00.000Z",
-              "describe": "。。。",
-              "skills": [
-                  "Python",
-                  "JavaScript",
-                  "Vue",
-                  "GCP"
-              ],
-              "occupation": [
-                  "ソフトウェアエンジニア"
-              ]
-          },
-          {
-              "fieldId": "career",
-              "company": "ココネ株式会社",
-              "from": "2020-10-14T15:00:00.000Z",
-              "to": "2021-03-30T15:00:00.000Z",
-              "describe": "・・・",
-              "skills": [
-                  "Python",
-                  "JavaScript",
-                  "Java",
-                  "Kotlin",
-                  "AWS"
-              ],
-              "occupation": [
-                  "ソフトウェアエンジニア"
-              ]
-          },
-          {
-              "fieldId": "career",
-              "company": "株式会社Lightblue Technology",
-              "from": "2018-10-31T15:00:00.000Z",
-              "to": "2019-04-29T15:00:00.000Z",
-              "describe": "。。。",
-              "skills": [
-                  "Python",
-                  "JavaScript",
-                  "AWS"
-              ],
-              "occupation": [
-                  "ソフトウェアエンジニア"
-              ]
-          }
-      ],
-      "skills": [
-        "Python",
-        "JavaScript",
-        "Java",
-        "Kotlin",
-        "Vue",
-        "GCP"
-      ]
-    })
+    const route = useRoute()
+
+    const member = ref()
+    const getMemberMeta = async () => {
+      const res: any = await axios({
+        method: 'GET',
+        url: `https://toipptakosan11.microcms.io/api/v1/member-meta/${route.params.id}`,
+        headers: {
+          'X-API-KEY': '1c2b6719-9d1e-4b97-8f0d-9db1e28e1b15'
+        }
+      })
+
+      console.log(res)
+
+      member.value = res.data
+    }
+
+    onMounted(getMemberMeta)
     return {
       member
     }

@@ -1,7 +1,7 @@
 <template>
   <header :class="$style.wrapper">
     <div :class="$style.headerContents">
-      <router-link to="/" :class="$style.logo">Rちゃんワールド</router-link>
+      <router-link to="/" :class="$style.logo">R - World</router-link>
 
       <div :class="$style.rightContents">
         <ul :class="$style.list">
