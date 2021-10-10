@@ -4,9 +4,10 @@
 
       <div :class="$style.rightContents">
         <ul :class="$style.list">
+          <li><router-link to="/" :class="$style.link">home</router-link></li>
           <li><router-link to="/member" :class="$style.link">member</router-link></li>
-          <li><router-link to="/member" :class="$style.link">jobs</router-link></li>
-          <li><router-link to="/member" :class="$style.link">about</router-link></li>
+          <!-- <li><router-link to="/member" :class="$style.link">jobs</router-link></li> -->
+          <!-- <li><router-link to="/member" :class="$style.link">about</router-link></li> -->
         </ul>
       </div>
     </header>
@@ -37,7 +38,7 @@ export default defineComponent({
 
 .logo {
   font-size: 1.25rem;
-  color: #666666
+  color: #000;
 }
 
 .rightContents {
@@ -49,16 +50,16 @@ export default defineComponent({
   display: flex;
 
   & > li {
-    margin-right: 36px;
-    padding: 0 10px;
+    padding: 0 36px 0;
+    border-right: 1px solid #666666;
 
     &:last-child {
-      margin-right: 0;
+      border-right: 0;
     }
   }
 }
 
 .link {
-  color: #666666;
+  color: #000;
 }
 </style>
