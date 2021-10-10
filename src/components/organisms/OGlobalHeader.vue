@@ -46,6 +46,7 @@ export default defineComponent({
 .logo {
   font-size: 1.25rem;
   color: #000;
+  padding-left: 20px;
 }
 
 .rightContents {

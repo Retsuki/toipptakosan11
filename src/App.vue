@@ -1,6 +1,6 @@
 <template>
   <o-global-header />
-  <router-view></router-view>
+  <router-view :class="$style.mainContents"></router-view>
   <o-global-footer />
 </template>
 
@@ -18,9 +18,14 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style lang="scss" module>
 #app {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+.mainContents {
+  min-height: 100vh;
+  max-height: 100%;
 }
 </style>

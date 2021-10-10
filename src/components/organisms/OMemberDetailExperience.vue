@@ -89,11 +89,14 @@ export default defineComponent({
 
 .companyPosition {
   font-size: 1rem;
+  margin-top: 11px;
 }
 
 .companyDescription {
   font-size: 1rem;
   font-weight: normal;
   min-height: 100px;
+  margin-top: 11px;
+  padding-bottom: 40px;
 }
 </style>
