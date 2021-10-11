@@ -11,7 +11,7 @@ module.exports = {
     '@vue/typescript',
   ],
   plugins: ['vue'],
-  roles: {
+  rules: {
     "semi": [2, "never"],
   }
 }
