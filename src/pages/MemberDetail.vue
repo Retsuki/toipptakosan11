@@ -26,6 +26,7 @@ import OMemberDetailSelfIntroduction from '../components/organisms/OMemberDetail
 import OMemberDetailExperience from '../components/organisms/OMemberDetailExperience.vue'
 import OMemberDetailSkills from '../components/organisms/OMemberDetailSkills.vue'
 import { useRoute } from 'vue-router'
+import { Member } from '../types'
 
 export default defineComponent({
   components: { 
@@ -38,15 +39,10 @@ export default defineComponent({
 
     const member = ref()
     const getMemberMeta = async () => {
-      const res: any = await axios({
+      const res = await axios.request<Member>({
         method: 'GET',
-        url: `https://toipptakosan11.microcms.io/api/v1/member-meta/${route.params.id}`,
-        headers: {
-          'X-API-KEY': '1c2b6719-9d1e-4b97-8f0d-9db1e28e1b15'
-        }
+        url: `https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api/members/${route.params.id}`,
       })
-
-      console.log(res)
 
       member.value = res.data
     }

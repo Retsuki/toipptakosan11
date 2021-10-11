@@ -10,7 +10,7 @@
       >
         <router-link :to="`/member/${id}`" :class="$style.cardContent">
           <img :src="profile_image.url" :class="$style.profileImage">
-          <div :class="$style.contents">
+          <div>
             <div :class="$style.name">{{ name }}</div>
             <ul>
               <li>職種: {{ occupation[0] }}</li>
@@ -28,21 +28,19 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
 import axios from 'axios';
+import { Member } from '../types';
 
 
 export default defineComponent({
   setup () {
-    const members = ref([])
+    const members = ref<Member[]>([])
     const getMemberMeta = async () => {
-      const res: any = await axios({
+      const res = await axios.request<Member[]>({
         method: 'GET',
-        url: 'https://toipptakosan11.microcms.io/api/v1/member-meta',
-        headers: {
-          'X-API-KEY': '1c2b6719-9d1e-4b97-8f0d-9db1e28e1b15'
-        }
+        url: 'https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api/members'
       })
 
-      members.value = res.data.contents
+      members.value = res.data
     }
 
     onMounted(getMemberMeta)

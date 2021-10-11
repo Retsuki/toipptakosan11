@@ -5,8 +5,8 @@
     <div :class="$style.contents">
       <ul>
         <li 
-        v-for="{ company, describe, occupation, skills }, i of member.experience" 
-        :key="i"
+        v-for="({ company, describe, occupation, skills }) of member.experience" 
+        :key="company"
         >
           <div :class="$style.point" />
           <div :class="$style.cardBox">
