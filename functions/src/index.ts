@@ -4,8 +4,10 @@ import { ExpressAdapter } from '@nestjs/platform-express'
 import { AppModule } from './app.module'
 
 import express from 'express'
+import cors from 'cors'
 
 const app = express()
+app.use(cors({ origin: true }))
 
 const createNestServer = async (expressInstance: any) => {
   const nestApp = await NestFactory.create(
@@ -19,4 +21,4 @@ createNestServer(app)
 .then(() => console.log('Nest Ready'))
 .catch
 
-export const api = functions.https.onRequest(app);
+export const api = functions.region('asia-northeast1').https.onRequest(app);
