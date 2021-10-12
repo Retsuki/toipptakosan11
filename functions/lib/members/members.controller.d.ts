@@ -1,6 +1,8 @@
-import { Member } from 'src/types/axios';
-import { Request } from 'express';
+import { Member } from 'src/members/interfaces/member.interface';
+import { MembersService } from './members.service';
 export declare class MembersController {
+    private membersService;
+    constructor(membersService: MembersService);
     getMember(params: any): Promise<Member>;
-    getMembers(req: Request): Promise<Member[]>;
+    getMembers(): Promise<Member[]>;
 }
