@@ -5,17 +5,17 @@
     <ul :class="$style.sns">
       <li v-if="member.sns.facebook">
         <a :href="member.sns.facebook">
-          <img src="/src/assets/images/facebook-brands.svg" alt="facebook icon" :class="$style.icon">
+          <img src="@/assets/images/facebook-brands.svg" alt="facebook icon" :class="$style.icon">
         </a>
       </li>
       <li v-if="member.sns.twitter">
         <a :href="member.sns.twitter">
-          <img src="/src/assets/images/twitter-brands.svg" alt="twitter icon" :class="$style.icon">
+          <img src="@/assets/images/twitter-brands.svg" alt="twitter icon" :class="$style.icon">
         </a>
       </li>
       <li v-if="member.sns.github">
         <a :href="member.sns.github">
-          <img src="/src/assets/images/github-brands.svg" alt="github icon" :class="$style.icon">
+          <img src="@/assets/images/github-brands.svg" alt="github icon" :class="$style.icon">
         </a>
       </li>
     </ul>
