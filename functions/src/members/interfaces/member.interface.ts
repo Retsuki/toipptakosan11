@@ -31,7 +31,7 @@ export interface Member {
   skills: string[];
 }
 
-export interface Members {
+export interface GetMembers {
   contents: Member[];
   totalCount: number;
   offset: number;

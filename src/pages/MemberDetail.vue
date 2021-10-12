@@ -20,34 +20,26 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import OMemberDetailSelfIntroduction from '../components/organisms/OMemberDetailSelfIntroduction.vue'
 import OMemberDetailExperience from '../components/organisms/OMemberDetailExperience.vue'
 import OMemberDetailSkills from '../components/organisms/OMemberDetailSkills.vue'
 import { useRoute } from 'vue-router'
-import { Member } from '../types'
+import useMembers from '../composables/members'
 
 export default defineComponent({
-  components: { 
+  components: {
     OMemberDetailSelfIntroduction, 
     OMemberDetailExperience,
     OMemberDetailSkills
   },
   setup () {
     const route = useRoute()
+    const { member, getMember } = useMembers()
 
-    const member = ref()
-    const getMemberMeta = async () => {
-      const res = await axios.request<Member>({
-        method: 'GET',
-        url: `https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api/members/${route.params.id}`,
-      })
-
-      member.value = res.data
-    }
-
-    onMounted(getMemberMeta)
+    onMounted(() => {
+      getMember(route.params.id as string)
+    })
     return {
       member
     }

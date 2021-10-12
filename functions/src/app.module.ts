@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { MembersController } from './members/members.controller';
+import { MembersModule } from './members/members.module';
 
 // About controllers
 // https://docs.nestjs.com/controllers
 
 @Module({
-  controllers: [MembersController]
+  imports: [MembersModule]
 })
 export class AppModule {}

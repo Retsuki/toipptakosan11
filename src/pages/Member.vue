@@ -27,23 +27,15 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
-import axios from 'axios';
-import { Member } from '../types';
+import useMembers from '../composables/members'
 
 
 export default defineComponent({
   setup () {
-    const members = ref<Member[]>([])
-    const getMemberMeta = async () => {
-      const res = await axios.request<Member[]>({
-        method: 'GET',
-        url: 'https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api/members'
-      })
-
-      members.value = res.data
-    }
-
-    onMounted(getMemberMeta)
+    const { members, getMembers } = useMembers()
+    onMounted(() => {
+      getMembers()
+    })
     return {
       members
     }
