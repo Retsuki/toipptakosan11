@@ -12,27 +12,17 @@
     </div>
 
     <main :class="$style.main">
-      <o-member-detail-self-introduction :member="member" />
-      <o-member-detail-experience :member="member" />
-      <o-member-detail-skills :skills="member.skills" />
+      <organisms-member-detail-self-introduction :member="member" />
+      <organisms-member-detail-experience :member="member" />
+      <organisms-member-detail-skills :skills="member.skills" />
     </main>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue'
-import OMemberDetailSelfIntroduction from '../components/organisms/OMemberDetailSelfIntroduction.vue'
-import OMemberDetailExperience from '../components/organisms/OMemberDetailExperience.vue'
-import OMemberDetailSkills from '../components/organisms/OMemberDetailSkills.vue'
-import { useRoute } from 'vue-router'
 import useMembers from '../composables/members'
 
 export default defineComponent({
-  components: {
-    OMemberDetailSelfIntroduction, 
-    OMemberDetailExperience,
-    OMemberDetailSkills
-  },
   setup () {
     const route = useRoute()
     const { member, getMember } = useMembers()

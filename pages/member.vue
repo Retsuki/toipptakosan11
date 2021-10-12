@@ -26,9 +26,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
 import useMembers from '../composables/members'
-
 
 export default defineComponent({
   setup () {
