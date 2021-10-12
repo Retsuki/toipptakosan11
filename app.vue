@@ -1,12 +1,13 @@
 <template>
   <div>
-    <o-global-header />
+    <organisms-global-header />
     <NuxtPage :class="$style.mainContents" />
-    <o-global-footer />
+    <organisms-global-footer />
   </div>
 </template>
 
 <style lang="scss" module>
+@import "./assets/scss/style.scss";
 .mainContents {
   min-height: 100vh;
   max-height: 100%;
