@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import useMembers from '../composables/members'
+import useMembers from '@/composables/members'
 
 export default defineComponent({
   setup () {
