@@ -11,3 +11,6 @@
 | Infrastructure                     | Firebase                                                                                                                                              |
 | CI / CD(Environment setup)         | Github Actions                                                                                                                                        |
 | Other                              | microCMS                                                                                                                                              |
+
+## Nuxt3の仕組み
+- [routerについて](https://github.com/nuxt/framework/blob/a896c64b1232dba1d01874159a9953d5f79bccc4/packages/nuxt3/src/pages/utils.ts#L93)

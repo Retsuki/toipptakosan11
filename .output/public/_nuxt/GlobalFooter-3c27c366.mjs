@@ -1,0 +1,1 @@
+import{_ as o,d as r,c as t,n as a,o as n,a as c}from"./entry-a8744911.mjs";const p="_wrapper_197sn_1";var l={wrapper:p};const _=r({setup(){return{}}}),d=c("div",null,"R - World",-1),i=[d];function u(s,f,m,$,w,y){return n(),t("footer",{class:a(s.$style.wrapper)},i,2)}const e={};e.$style=l;var v=o(_,[["render",u],["__cssModules",e]]);export{v as default};
