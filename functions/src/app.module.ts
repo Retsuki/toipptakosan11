@@ -5,6 +5,6 @@ import { MembersModule } from './members/members.module';
 // https://docs.nestjs.com/controllers
 
 @Module({
-  imports: [MembersModule]
+  imports: [MembersModule],
 })
 export class AppModule {}

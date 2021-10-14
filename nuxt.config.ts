@@ -2,5 +2,8 @@ import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
   components: true,
-  target: 'static'
+  routes: {
+    '/': { static: true },
+    '/member/*': { ssr: false }
+  }
 })
