@@ -527,7 +527,7 @@ const htmlTemplate = (params) => `<!DOCTYPE html>
 </html>
 `;
 
-const STATIC_ASSETS_BASE = "/Users/toipptakosan11/GitHub/portfolio/mypage/dist" + "/" + "1634085940";
+const STATIC_ASSETS_BASE = "/Users/toipptakosan11/GitHub/portfolio/mypage/dist" + "/" + "1634171937";
 const PAYLOAD_JS = "/payload.js";
 const getClientManifest = cachedImport(() => import('./client.manifest.mjs'));
 const getSSRApp = cachedImport(() => import('./server.mjs'));
