@@ -3,5 +3,7 @@ query getMember($id: String!) {
     id
     name
     occupation
+    company
+    updatedAt
   }
 }
