@@ -5,11 +5,13 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore ."
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
     "axios": "^0.22.0",
     "firebase": "^8.4.3",
+    "graphql": "^15.6.1",
     "path": "^0.12.7",
     "vite": "^2.2.3",
     "vue": "^3.0.5",
@@ -17,6 +19,11 @@
     "vue-tsc": "^0.0.24"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.2.1",
+    "@graphql-codegen/introspection": "2.1.0",
+    "@graphql-codegen/typescript": "2.2.4",
+    "@graphql-codegen/typescript-graphql-request": "^4.1.6",
+    "@graphql-codegen/typescript-operations": "2.1.8",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "@vitejs/plugin-vue": "^1.2.2",
