@@ -1,4 +1,4 @@
-import { Field, ObjectType, ID } from '@nestjs/graphql';
+import { Field, ObjectType, ID, Int } from '@nestjs/graphql';
 
 // scalars
 // https://docs.nestjs.com/graphql/scalars
@@ -13,4 +13,7 @@ export class Member {
 
   @Field(type => [String])
   occupation: string[];
+
+  @Field(type => Int)
+  experience_year: number;
 }

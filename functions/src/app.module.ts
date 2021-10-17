@@ -10,7 +10,7 @@ import { MembersModule } from './members/members.module';
     MembersModule,
     GraphQLModule.forRoot({
       include: [MembersModule],
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'src/schema.graphql'),
     }),
   ],
 })
