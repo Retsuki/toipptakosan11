@@ -1,4 +1,7 @@
-import { Field, ObjectType, ID, Int } from '@nestjs/graphql';
+import { Field, ObjectType, ID, Int } from '@nestjs/graphql'
+import { ProfileImage } from './profile-image.models'
+import { Sns } from './sns.models'
+import { Experience } from './experience.models'
 
 // scalars
 // https://docs.nestjs.com/graphql/scalars
@@ -16,4 +19,16 @@ export class Member {
 
   @Field(type => Int)
   experience_year: number;
+
+  @Field(type => ProfileImage)
+  profile_image: ProfileImage;
+
+  @Field(type => Sns)
+  sns: Sns;
+
+  @Field(type => [Experience])
+  experience: Experience[];
+
+  @Field(type => [String])
+  skills: string[];
 }
