@@ -1,5 +1,5 @@
-import { Sns } from './sns.models';
 import { ProfileImage } from './profile-image.models';
+import { Sns } from './sns.models';
 import { Experience } from './experience.models';
 export declare class Member {
     id: string;
