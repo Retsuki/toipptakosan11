@@ -26,8 +26,11 @@ type Experience {
 
 type Member {
   id: ID!
+  createdAt: String!
+  updatedAt: String!
   name: String!
   occupation: [String!]!
+  company: String!
   experience_year: Int!
   profile_image: ProfileImage!
   sns: Sns!

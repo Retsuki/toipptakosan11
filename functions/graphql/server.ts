@@ -23,6 +23,8 @@ export type Experience = {
 
 export type Member = {
   __typename?: 'Member';
+  company: Scalars['String'];
+  createdAt: Scalars['String'];
   experience: Array<Experience>;
   experience_year: Scalars['Int'];
   id: Scalars['ID'];
@@ -31,6 +33,7 @@ export type Member = {
   profile_image: ProfileImage;
   skills: Array<Scalars['String']>;
   sns: Sns;
+  updatedAt: Scalars['String'];
 };
 
 export type ProfileImage = {

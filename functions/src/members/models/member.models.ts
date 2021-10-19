@@ -12,10 +12,19 @@ export class Member {
   id: string;
 
   @Field(type => String)
+  createdAt: string;
+
+  @Field(type => String)
+  updatedAt: string;
+
+  @Field(type => String)
   name: string;
 
   @Field(type => [String])
   occupation: string[];
+
+  @Field(type => String)
+  company: string;
 
   @Field(type => Int)
   experience_year: number;
