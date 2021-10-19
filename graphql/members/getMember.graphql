@@ -1,9 +1,0 @@
-query getMember($id: String!) {
-  getMember(id: $id) {
-    id
-    name
-    occupation
-    company
-    updatedAt
-  }
-}

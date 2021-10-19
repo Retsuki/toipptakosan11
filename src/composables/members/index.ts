@@ -2,8 +2,8 @@ import axios from 'axios';
 import { ref } from "vue"
 import { Member } from "./interfaces/member.interface"
 
-const baseUrl = 'https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api'
-// const baseUrl = 'http://localhost:5001/toipptakosan11-71185/asia-northeast1/api'
+// const baseUrl = 'https://asia-northeast1-toipptakosan11-71185.cloudfunctions.net/api'
+const baseUrl = 'http://localhost:5001/toipptakosan11-71185/asia-northeast1/api/graphql'
 
 export default function useMembers () {
   const member = ref<Member>()
