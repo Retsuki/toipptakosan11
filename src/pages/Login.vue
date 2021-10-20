@@ -1,8 +1,12 @@
 <template>
   <div :class="$style.wrapper">
-    <input type="text" :class="$style.email">
+    <div :class="$style.contents">
+      <input type="text" :class="$style.email" placeholder="Email">
 
-    <input type="password" :class="$style.password">
+      <input type="password" :class="$style.password" placeholder="Password">
+
+      <button :class="$style.button">ログイン</button>
+    </div>
   </div>
 </template>
 
@@ -11,8 +15,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup () {
-    
-
     return {}
   }
 })
@@ -22,5 +24,14 @@ export default defineComponent({
 .wrapper {
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.contents {
+  padding: 30px 0;
+  display: grid;
+  grid-template-rows: repeat(3, 30px); 
+  row-gap: 15px;
 }
 </style>
