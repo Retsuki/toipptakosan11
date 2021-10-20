@@ -1,0 +1,47 @@
+query getMember($id: String!) {
+  getMember(id: $id) {
+    id
+    updatedAt
+    name
+    occupation
+    self_introduction
+    company
+    experience_year
+    profile_image{
+      url
+      height
+      width
+    }
+    sns{
+      fieldId
+      facebook
+      twitter
+      github
+    }
+    experience{
+      fieldId
+      company
+      from
+      describe
+      skills
+      occupation
+    }
+    skills
+  }
+}
+
+query getMembers {
+  getMembers {
+    id
+    updatedAt
+    name
+    occupation
+    company
+    experience_year
+    profile_image{
+      url
+      height
+      width
+    }
+  }
+}

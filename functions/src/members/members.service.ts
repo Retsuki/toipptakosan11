@@ -1,14 +1,18 @@
-import { Injectable } from '@nestjs/common';
-import { GetMembers, Member } from 'src/members/interfaces/member.interface';
 import axios from 'axios';
+import { Injectable } from '@nestjs/common';
 import * as functions from 'firebase-functions';
+import { Member } from './models/member.models';
 
 const MICRO_CMS_API_KEY = functions.config().microcms.api_key
 
+interface GetMembers {
+  contents: Member[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+}
 @Injectable()
 export class MembersService {
-  // private readonly members: Member[] = []
-
   async getMember(id: string) {
     const response = await axios.request<Member>({
       method: 'GET',

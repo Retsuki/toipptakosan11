@@ -1,0 +1,45 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProfileImage {
+  url: String!
+  height: Int!
+  width: Int!
+}
+
+type Sns {
+  fieldId: ID!
+  facebook: String!
+  twitter: String!
+  github: String!
+}
+
+type Experience {
+  fieldId: ID!
+  company: String!
+  from: String!
+  describe: String!
+  skills: [String!]!
+  occupation: [String!]!
+}
+
+type Member {
+  id: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+  occupation: [String!]!
+  self_introduction: String!
+  company: String!
+  experience_year: Int!
+  profile_image: ProfileImage!
+  sns: Sns!
+  experience: [Experience!]!
+  skills: [String!]!
+}
+
+type Query {
+  getMember(id: String!): Member!
+  getMembers: [Member!]!
+}
