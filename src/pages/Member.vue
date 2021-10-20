@@ -26,16 +26,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import useMembers from '../composables/members'
 
 
 export default defineComponent({
   setup () {
     const { members, getMembers } = useMembers()
-    onMounted(() => {
-      getMembers()
+
+    onMounted(async () => {
+      members.value = await getMembers()
     })
+
     return {
       members
     }
