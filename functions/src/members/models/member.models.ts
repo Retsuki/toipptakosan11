@@ -24,6 +24,9 @@ export class Member {
   occupation: string[];
 
   @Field(type => String)
+  self_introduction: string;
+
+  @Field(type => String)
   company: string;
 
   @Field(type => Int)

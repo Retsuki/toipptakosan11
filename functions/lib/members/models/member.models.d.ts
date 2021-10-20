@@ -7,6 +7,7 @@ export declare class Member {
     updatedAt: string;
     name: string;
     occupation: string[];
+    self_introduction: string;
     company: string;
     experience_year: number;
     profile_image: ProfileImage;
