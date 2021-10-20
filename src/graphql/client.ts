@@ -34,6 +34,7 @@ export type Member = {
   name: Scalars['String'];
   occupation: Array<Scalars['String']>;
   profile_image: ProfileImage;
+  self_introduction: Scalars['String'];
   skills: Array<Scalars['String']>;
   sns: Sns;
   updatedAt: Scalars['String'];
@@ -70,30 +71,23 @@ export type GetMemberQueryVariables = Exact<{
 }>;
 
 
-export type GetMemberQuery = { __typename?: 'Query', getMember: { __typename?: 'Member', id: string, name: string, occupation: Array<string>, updatedAt: string } };
+export type GetMemberQuery = { __typename?: 'Query', getMember: { __typename?: 'Member', id: string, updatedAt: string, name: string, occupation: Array<string>, self_introduction: string, company: string, experience_year: number, skills: Array<string>, profile_image: { __typename?: 'ProfileImage', url: string, height: number, width: number }, sns: { __typename?: 'Sns', fieldId: string, facebook: string, twitter: string, github: string }, experience: Array<{ __typename?: 'Experience', fieldId: string, company: string, from: string, describe: string, skills: Array<string>, occupation: Array<string> }> } };
 
 export type GetMembersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetMembersQuery = { __typename?: 'Query', getMembers: Array<{ __typename?: 'Member', id: string, name: string, occupation: Array<string>, experience_year: number, skills: Array<string>, profile_image: { __typename?: 'ProfileImage', url: string, height: number, width: number }, sns: { __typename?: 'Sns', fieldId: string, facebook: string, twitter: string, github: string }, experience: Array<{ __typename?: 'Experience', fieldId: string, company: string, from: string, describe: string, skills: Array<string>, occupation: Array<string> }> }> };
+export type GetMembersQuery = { __typename?: 'Query', getMembers: Array<{ __typename?: 'Member', id: string, updatedAt: string, name: string, occupation: Array<string>, company: string, experience_year: number, profile_image: { __typename?: 'ProfileImage', url: string, height: number, width: number } }> };
 
 
 export const GetMemberDocument = gql`
     query getMember($id: String!) {
   getMember(id: $id) {
     id
-    name
-    occupation
     updatedAt
-  }
-}
-    `;
-export const GetMembersDocument = gql`
-    query getMembers {
-  getMembers {
-    id
     name
     occupation
+    self_introduction
+    company
     experience_year
     profile_image {
       url
@@ -115,6 +109,23 @@ export const GetMembersDocument = gql`
       occupation
     }
     skills
+  }
+}
+    `;
+export const GetMembersDocument = gql`
+    query getMembers {
+  getMembers {
+    id
+    updatedAt
+    name
+    occupation
+    company
+    experience_year
+    profile_image {
+      url
+      height
+      width
+    }
   }
 }
     `;
