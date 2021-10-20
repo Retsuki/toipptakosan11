@@ -6,3 +6,5 @@ dist-ssr
 .node-version
 
 .env
+
+serviceAccountKey*

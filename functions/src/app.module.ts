@@ -1,10 +1,17 @@
+import { join } from 'path'
 import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
 import { MembersModule } from './members/members.module';
 
-// About controllers
-// https://docs.nestjs.com/controllers
+// https://github.com/nestjs/graphql/issues/1621
 
 @Module({
-  imports: [MembersModule]
+  imports: [
+    MembersModule,
+    GraphQLModule.forRoot({
+      include: [MembersModule],
+      autoSchemaFile: join(process.cwd(), 'schema.graphql'),
+    }),
+  ],
 })
 export class AppModule {}

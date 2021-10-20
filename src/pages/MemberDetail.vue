@@ -37,8 +37,8 @@ export default defineComponent({
     const route = useRoute()
     const { member, getMember } = useMembers()
 
-    onMounted(() => {
-      getMember(route.params.id as string)
+    onMounted(async () => {
+      member.value = await getMember(route.params.id as string)
     })
     return {
       member
