@@ -4,9 +4,9 @@
 
     <div :class="$style.contents">
       <ul>
-        <li 
-        v-for="({ company, describe, occupation, skills }) of member.experience" 
-        :key="company"
+        <li
+          v-for="{ company, describe, occupation, skills } of member.experience"
+          :key="company"
         >
           <div :class="$style.point" />
           <div :class="$style.cardBox">
@@ -34,12 +34,12 @@ export default defineComponent({
   props: {
     member: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup () {
+  setup() {
     return {}
-  }
+  },
 })
 </script>
 

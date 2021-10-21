@@ -7,18 +7,18 @@ query getMember($id: String!) {
     self_introduction
     company
     experience_year
-    profile_image{
+    profile_image {
       url
       height
       width
     }
-    sns{
+    sns {
       fieldId
       facebook
       twitter
       github
     }
-    experience{
+    experience {
       fieldId
       company
       from
@@ -38,7 +38,7 @@ query getMembers {
     occupation
     company
     experience_year
-    profile_image{
+    profile_image {
       url
       height
       width

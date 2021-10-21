@@ -17,12 +17,12 @@ export default defineComponent({
   props: {
     skills: {
       type: Array as PropType<string[]>,
-      required: true
-    }
+      required: true,
+    },
   },
-  setup () {
+  setup() {
     return {}
-  }
+  },
 })
 </script>
 

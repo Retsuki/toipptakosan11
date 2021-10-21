@@ -13,8 +13,8 @@ export default defineComponent({
   name: 'App',
   components: {
     OGlobalHeader,
-    OGlobalFooter
-  }
+    OGlobalFooter,
+  },
 })
 </script>
 

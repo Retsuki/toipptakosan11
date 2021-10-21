@@ -3,13 +3,21 @@
     <h1>Member</h1>
 
     <ul>
-      <li 
-        v-for="{ id, updatedAt, name, occupation, company, experience_year, profile_image } of members" 
+      <li
+        v-for="{
+          id,
+          updatedAt,
+          name,
+          occupation,
+          company,
+          experience_year,
+          profile_image,
+        } of members"
         :key="id"
         :class="$style.card"
       >
         <router-link :to="`/member/${id}`" :class="$style.cardContent">
-          <img :src="profile_image.url" :class="$style.profileImage">
+          <img :src="profile_image.url" :class="$style.profileImage" />
           <div>
             <div :class="$style.name">{{ name }}</div>
             <ul>
@@ -29,9 +37,8 @@
 import { defineComponent, onMounted } from 'vue'
 import useMembers from '../composables/members'
 
-
 export default defineComponent({
-  setup () {
+  setup() {
     const { members, getMembers } = useMembers()
 
     onMounted(async () => {
@@ -39,9 +46,9 @@ export default defineComponent({
     })
 
     return {
-      members
+      members,
     }
-  }
+  },
 })
 </script>
 
