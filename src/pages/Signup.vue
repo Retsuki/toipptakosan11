@@ -1,21 +1,11 @@
 <template>
   <div :class="$style.wrapper">
     <div :class="$style.contents">
-      <input
-        type="text"
-        :class="$style.email"
-        placeholder="Email"
-        v-model="email"
-      />
+      <input type="text" placeholder="Email" v-model="email" />
 
-      <input
-        type="password"
-        :class="$style.password"
-        placeholder="Password"
-        v-model="password"
-      />
+      <input type="password" placeholder="Password" v-model="password" />
 
-      <button :class="$style.button" @click="handleSignup">登録</button>
+      <button @click="handleSignup">登録</button>
     </div>
   </div>
 </template>

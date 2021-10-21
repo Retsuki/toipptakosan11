@@ -1,41 +1,21 @@
 <template>
   <div :class="$style.wrapper">
     <div :class="$style.contents">
-      <input
-        type="text"
-        :class="$style.email"
-        placeholder="Email"
-        v-model="email"
-      />
+      <input type="text" placeholder="Email" />
 
-      <input
-        type="password"
-        :class="$style.password"
-        placeholder="Password"
-        v-model="password"
-      />
+      <input type="password" placeholder="Password" />
 
-      <button :class="$style.button">ログイン</button>
+      <button>ログイン</button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
-    const email = ref()
-    const password = ref()
-    const auth = getAuth()
-    const signup = () => {
-      createUserWithEmailAndPassword(auth, email, password).then(() => {})
-    }
-    return {
-      email,
-      password,
-    }
+    return {}
   },
 })
 </script>
