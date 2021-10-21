@@ -8,39 +8,39 @@ import { Experience } from './experience.models'
 
 @ObjectType()
 export class Member {
-  @Field(type => ID)
-  id: string;
+  @Field((type) => ID)
+  id: string
 
-  @Field(type => String)
-  createdAt: string;
+  @Field((type) => String)
+  createdAt: string
 
-  @Field(type => String)
-  updatedAt: string;
+  @Field((type) => String)
+  updatedAt: string
 
-  @Field(type => String)
-  name: string;
+  @Field((type) => String)
+  name: string
 
-  @Field(type => [String])
-  occupation: string[];
+  @Field((type) => [String])
+  occupation: string[]
 
-  @Field(type => String)
-  self_introduction: string;
+  @Field((type) => String)
+  self_introduction: string
 
-  @Field(type => String)
-  company: string;
+  @Field((type) => String)
+  company: string
 
-  @Field(type => Int)
-  experience_year: number;
+  @Field((type) => Int)
+  experience_year: number
 
-  @Field(type => ProfileImage)
-  profile_image: ProfileImage;
+  @Field((type) => ProfileImage)
+  profile_image: ProfileImage
 
-  @Field(type => Sns)
-  sns: Sns;
+  @Field((type) => Sns)
+  sns: Sns
 
-  @Field(type => [Experience])
-  experience: Experience[];
+  @Field((type) => [Experience])
+  experience: Experience[]
 
-  @Field(type => [String])
-  skills: string[];
+  @Field((type) => [String])
+  skills: string[]
 }

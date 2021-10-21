@@ -4,29 +4,28 @@ import Member from './pages/Member.vue'
 import MemberDetail from './pages/MemberDetail.vue'
 import Login from './pages/Login.vue'
 
-
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/member',
     name: 'Member',
-    component: Member
+    component: Member,
   },
   {
     path: '/member/:id',
-    component: MemberDetail
+    component: MemberDetail,
   },
   {
     path: '/login',
-    component: Login
-  }
+    component: Login,
+  },
 ]
 
-export const router =  createRouter({
+export const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })

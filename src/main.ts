@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { router } from './router'
 import App from './App.vue'
-import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const auth = getAuth()
 onAuthStateChanged(auth, (user) => {
@@ -17,7 +17,4 @@ onAuthStateChanged(auth, (user) => {
   }
 })
 
-
-createApp(App)
-  .use(router)
-  .mount('#app')
+createApp(App).use(router).mount('#app')

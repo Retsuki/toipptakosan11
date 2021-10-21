@@ -1,7 +1,6 @@
 <template>
   <footer :class="$style.wrapper">
     <div>R - World</div>
-
   </footer>
 </template>
 
@@ -9,11 +8,9 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup () {
-    
-
+  setup() {
     return {}
-  }
+  },
 })
 </script>
 

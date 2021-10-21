@@ -14,10 +14,8 @@
     "baseUrl": "./",
     "incremental": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
