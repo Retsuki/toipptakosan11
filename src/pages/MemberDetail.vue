@@ -2,7 +2,7 @@
   <div v-if="member" :class="$style.wrapper">
     <div :class="$style.header">
       <div :class="$style.headerContent">
-        <img :src="member.profile_image.url" alt="profile image">
+        <img :src="member.profile_image.url" alt="profile image" />
         <div :class="$style.rightContents">
           <h3>{{ member.name }}</h3>
           <div>{{ member.company }} / {{ member.occupation[0] }}</div>
@@ -29,11 +29,11 @@ import useMembers from '../composables/members'
 
 export default defineComponent({
   components: {
-    OMemberDetailSelfIntroduction, 
+    OMemberDetailSelfIntroduction,
     OMemberDetailExperience,
-    OMemberDetailSkills
+    OMemberDetailSkills,
   },
-  setup () {
+  setup() {
     const route = useRoute()
     const { member, getMember } = useMembers()
 
@@ -41,9 +41,9 @@ export default defineComponent({
       member.value = await getMember(route.params.id as string)
     })
     return {
-      member
+      member,
     }
-  }
+  },
 })
 </script>
 
@@ -89,7 +89,7 @@ export default defineComponent({
 
   & > h3 {
     font-size: 2rem;
-    margin: 0; 
+    margin: 0;
   }
 }
 
@@ -100,5 +100,4 @@ export default defineComponent({
   max-width: 860px;
   margin: 0px auto;
 }
-
 </style>

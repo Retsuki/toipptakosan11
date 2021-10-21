@@ -1,6 +1,6 @@
 <template>
   <main :class="$style.wrapper">
-    <div :class="$style.hello">   
+    <div :class="$style.hello">
       <div :class="$style.container">
         <h1>R - World</h1>
         <p>Let them draw big dreams. Make big dreams come true.</p>
@@ -22,10 +22,9 @@ import OGlobalHeader from '../components/organisms/OGlobalHeader.vue'
 
 export default defineComponent({
   components: { OGlobalHeader },
-  setup () {
-    return {
-    }
-  }
+  setup() {
+    return {}
+  },
 })
 </script>
 
@@ -47,10 +46,10 @@ export default defineComponent({
   min-height: 440px;
 
   & > h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      padding-top: 100px;
-    }
+    font-size: 4rem;
+    font-weight: 700;
+    padding-top: 100px;
+  }
 
   & > p {
     font-size: 1.5rem;

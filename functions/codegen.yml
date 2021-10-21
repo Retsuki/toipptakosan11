@@ -1,9 +1,9 @@
 overwrite: true
-schema: "graphql/schema.graphql"
+schema: 'graphql/schema.graphql'
 documents: null
 generates:
   graphql/server.ts:
     plugins:
-      - "typescript"
+      - 'typescript'
     config:
       maybeValue: T

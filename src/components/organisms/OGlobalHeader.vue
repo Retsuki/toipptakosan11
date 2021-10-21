@@ -6,7 +6,9 @@
       <div :class="$style.rightContents">
         <ul :class="$style.list">
           <li><router-link to="/" :class="$style.link">home</router-link></li>
-          <li><router-link to="/member" :class="$style.link">member</router-link></li>
+          <li>
+            <router-link to="/member" :class="$style.link">member</router-link>
+          </li>
           <!-- <li><router-link to="/member" :class="$style.link">jobs</router-link></li> -->
           <!-- <li><router-link to="/member" :class="$style.link">about</router-link></li> -->
         </ul>
@@ -19,9 +21,9 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup () {
+  setup() {
     return {}
-  }
+  },
 })
 </script>
 
