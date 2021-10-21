@@ -1,20 +1,19 @@
 import { createApp } from 'vue'
 import { router } from './router'
 import App from './App.vue'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { initializeApp } from 'firebase/app'
 
-const auth = getAuth()
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid
-    const displayName = user.displayName
-    const email = user.email
-    const emailVerified = user.emailVerified
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
+}
 
-    // TODO: ここにvuexに格納処理を書く 2021/10/21
-  } else {
-    // TODO: logout処理を書く？ 2021/10/21
-  }
-})
+initializeApp(firebaseConfig)
 
 createApp(App).use(router).mount('#app')
