@@ -7,9 +7,9 @@
 
 ## 技術スタック
 
-| Category                           | Technology Stack                                                                                                         |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Programing language / Library etc. | Web Frontend<br>HTML, CSS, JavaScript, TypeScript, Vue.js(composition api)<br><br>Backend<br>Node.js(js, ts, NestJS)<br> |
-| Infrastructure                     | Firebase                                                                                                                 |
-| CI / CD(Environment setup)         | Github Actions                                                                                                           |
-| Other                              | microCMS                                                                                                                 |
+| Category                           | Technology Stack                                                                                                                  |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Programing language / Library etc. | Web Frontend<br>HTML, CSS, JavaScript, TypeScript, Vue.js(composition api)<br><br>Backend<br>Node.js(js, ts, NestJS, GraphQL)<br> |
+| Infrastructure                     | Firebase                                                                                                                          |
+| CI / CD(Environment setup)         | Github Actions                                                                                                                    |
+| Other                              | microCMS                                                                                                                          |
