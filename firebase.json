@@ -7,7 +7,7 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      { "source": "/api/**", "function": "api/graphql", "region": "asia-northeast1" },
+      { "source": "/api/**", "function": "api/graphql" },
       { "source": "**", "destination": "/index.html" }
     ]
   },

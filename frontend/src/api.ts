@@ -1,9 +1,7 @@
 import { GraphQLClient } from 'graphql-request'
 import { getSdk } from './graphql/client'
 
-const client = new GraphQLClient(
-  '/api/graphql',
-)
+const client = new GraphQLClient('/api/graphql')
 const sdk = getSdk(client)
 
 export async function getMember(id: string) {

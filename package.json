@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "scripts": {
     "build": "yarn workspaces run build",
-    "serve": "yarn build && firebase serve --only hosting,functions"
+    "serve": "yarn build && firebase serve --only hosting,functions",
+    "deploy": "yarn build && firebase deploy"
   },
   "repository": "git@github.com:Retsuki/toipptakosan11.git",
   "author": "Retsuki",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "frontend"
+    "frontend",
+    "backend/functions"
   ]
 }
