@@ -1,0 +1,12 @@
+{
+  "name": "toipptakosan11",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:frontend": "cd ./frontend && yarn vite",
+    "build:frontend": "cd ./frontend && yarn vue-tsc --noEmit && yarn vite build",
+    "serve:frontend": "cd .frontend && yarn vite preview"
+  },
+  "repository": "git@github.com:Retsuki/toipptakosan11.git",
+  "author": "Retsuki <s1f101701845@iniad.org>",
+  "license": "MIT"
+}

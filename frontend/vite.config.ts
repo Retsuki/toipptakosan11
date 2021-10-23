@@ -6,7 +6,12 @@ export default defineConfig({
   plugins: [vue()],
   css: {
     preprocessorOptions: {
-      scss: { additionalData: `@import "src/assets/scss/style.scss";` },
-    },
+      scss: {
+        additionalData: `@import "src/assets/scss/style.scss";`
+      }
+    }
   },
+  build: {
+    outDir: '../dist'
+  }
 })
