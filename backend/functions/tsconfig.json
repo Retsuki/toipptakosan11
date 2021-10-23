@@ -13,8 +13,7 @@
     "removeComments": true,
     "baseUrl": "./",
     "incremental": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "esModuleInterop": true
   },
   "compileOnSave": true,
   "include": ["src/**/*"]

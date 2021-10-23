@@ -2,7 +2,8 @@
   "name": "toipptakosan11",
   "version": "1.0.0",
   "scripts": {
-    "build": "yarn workspaces run build"
+    "build": "yarn workspaces run build",
+    "serve": "yarn build && firebase serve --only hosting,functions"
   },
   "repository": "git@github.com:Retsuki/toipptakosan11.git",
   "author": "Retsuki",

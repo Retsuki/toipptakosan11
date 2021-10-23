@@ -39,4 +39,4 @@ const createNestServer = async (expressInstance: any) => {
 
 createNestServer(app).then(() => console.log('Nest Ready')).catch
 
-export const api = functions.region('asia-northeast1').https.onRequest(app)
+export const api = functions.https.onRequest(app)

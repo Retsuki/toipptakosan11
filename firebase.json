@@ -7,10 +7,13 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+      { "source": "/api/**", "function": "api/graphql", "region": "asia-northeast1" },
+      { "source": "**", "destination": "/index.html" }
     ]
+  },
+
+  "functions": {
+    "source": "backend/functions",
+    "predeploy": "npm --prefix backend/functions run build"
   }
 }
