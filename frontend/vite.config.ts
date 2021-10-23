@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
+  root: './',
   plugins: [vue()],
   css: {
     preprocessorOptions: {
@@ -12,6 +14,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../dist'
+    outDir: '../dist',
+    emptyOutDir: true,
   }
 })
