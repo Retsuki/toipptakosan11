@@ -1,9 +1,14 @@
 {
   "name": "toipptakosan11",
   "version": "1.0.0",
+  "scripts": {
+    "build": "yarn workspaces run build"
+  },
   "repository": "git@github.com:Retsuki/toipptakosan11.git",
-  "author": "Retsuki <s1f101701845@iniad.org>",
+  "author": "Retsuki",
   "license": "MIT",
   "private": true,
-  "workspaces": ["frontend"]
+  "workspaces": [
+    "frontend"
+  ]
 }
