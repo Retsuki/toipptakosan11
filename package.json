@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "yarn workspaces run build",
-    "serve": "yarn build && firebase serve --only hosting,functions",
-    "deploy": "yarn build && firebase deploy"
+    "serve": "yarn build && firebase emulators:start --only hosting,functions",
+    "deploy": "yarn build && firebase deploy",
+    "copy": "cp backend/functions/dist public"
   },
   "repository": "git@github.com:Retsuki/toipptakosan11.git",
   "author": "Retsuki",
