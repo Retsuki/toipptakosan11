@@ -4,6 +4,7 @@ import Member from './pages/Member.vue'
 import MemberDetail from './pages/MemberDetail.vue'
 import Login from './pages/Login.vue'
 import Signup from './pages/Signup.vue'
+import Profile from './pages/Profile.vue'
 
 const routes = [
   {
@@ -28,6 +29,10 @@ const routes = [
     path: '/signup',
     component: Signup,
   },
+  {
+    path: '/profile',
+    component: Profile,
+  }
 ]
 
 export const router = createRouter({
