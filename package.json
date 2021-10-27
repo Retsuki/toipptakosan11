@@ -5,7 +5,9 @@
     "build": "yarn workspaces run build",
     "serve": "yarn build && firebase emulators:start --only hosting,functions",
     "deploy": "yarn build && firebase deploy",
-    "copy": "cp backend/functions/dist public"
+    "copy": "cp backend/functions/dist public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": "git@github.com:Retsuki/toipptakosan11.git",
   "author": "Retsuki",
@@ -14,5 +16,15 @@
   "workspaces": [
     "frontend",
     "backend/functions"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/vue3": "^6.3.12",
+    "babel-loader": "^8.2.3",
+    "vue-loader": "^16.8.2"
+  },
+  "dependencies": {}
 }
