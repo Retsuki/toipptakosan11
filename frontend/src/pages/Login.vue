@@ -3,8 +3,8 @@
     <m-auth
       v-model:email="email"
       v-model:password="password"
-      buttonText="ログイン"
-      :onClick="handleLogin"
+      button-text="ログイン"
+      :on-click="handleLogin"
     />
   </div>
 </template>

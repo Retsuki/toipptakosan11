@@ -18,7 +18,7 @@
 
     <a-button
       :text="buttonText"
-      :onClick="onClick"
+      :on-click="onClick"
       :class="$style.button"
     ></a-button>
   </div>
@@ -41,7 +41,10 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    onClick: Function,
+    onClick: {
+      type: Function,
+      required: true,
+    },
   },
   emits: ['update:email', 'update:password'],
 })
