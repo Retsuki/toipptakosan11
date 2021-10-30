@@ -1,21 +1,26 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.contents">
-      <input type="text" placeholder="Email" />
-
-      <input type="password" placeholder="Password" />
-
-      <button>ログイン</button>
-    </div>
+    <m-auth
+      v-model:email="email"
+      v-model:password="password"
+      buttonText="ログイン"
+      :onClick="handleLogin"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import useLogin from '../composables/login'
 
 export default defineComponent({
   setup() {
-    return {}
+    const { email, password, handleLogin } = useLogin()
+    return {
+      email,
+      password,
+      handleLogin,
+    }
   },
 })
 </script>
@@ -26,12 +31,5 @@ export default defineComponent({
   height: 100%;
   display: flex;
   justify-content: center;
-}
-
-.contents {
-  padding: 30px 0;
-  display: grid;
-  grid-template-rows: repeat(3, 30px);
-  row-gap: 15px;
 }
 </style>

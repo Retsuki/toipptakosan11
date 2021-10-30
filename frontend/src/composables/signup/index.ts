@@ -8,7 +8,7 @@ export default function useSignup() {
   const password = ref()
 
   const auth = getAuth()
-  const handleSignup = () => {
+  const handleSignup = async () => {
     console.log(email.value)
     console.log(password.value)
     // createUserWithEmailAndPassword(auth, email.value, password.value)
@@ -24,6 +24,7 @@ export default function useSignup() {
     //     console.error(error.code)
     //     console.error(error.message)
     //   })
+    return await router.push('/profile/')
   }
 
   return {
