@@ -29,11 +29,21 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    email: String,
-    password: String,
-    buttonText: String,
+    email: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    buttonText: {
+      type: String,
+      required: true,
+    },
     onClick: Function,
   },
+  emits: ['update:email', 'update:password'],
 })
 </script>
 

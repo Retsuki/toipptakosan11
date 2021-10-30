@@ -2,9 +2,9 @@
   <input
     :type="type"
     :placeholder="placeholder"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
     :class="$style.input"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.currentTarget)"
   />
 </template>
 
@@ -21,8 +21,12 @@ export default defineComponent({
       type: String,
       default: '',
     },
-    modelValue: [String, Number],
+    modelValue: {
+      type: String,
+      required: true,
+    },
   },
+  emits: ['update:modelValue'],
 })
 </script>
 

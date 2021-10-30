@@ -1,16 +1,22 @@
 <template>
-  <button :class="$style.button" @click="onClick">
+  <button :class="$style.button" @click="() => onClick">
     {{ text }}
   </button>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    text: String,
-    onClick: Function,
+    text: {
+      type: String,
+      required: true,
+    },
+    onClick: {
+      type: Function,
+      required: true,
+    },
   },
 })
 </script>
