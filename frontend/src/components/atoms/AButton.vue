@@ -1,5 +1,5 @@
 <template>
-  <button :class="$style.button" @click="() => onClick">
+  <button :class="$style.button" @click="() => onClick()">
     {{ text }}
   </button>
 </template>
