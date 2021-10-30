@@ -2,10 +2,9 @@
   <div :class="$style.wrapper">
     <div :class="$style.contents">
       <input type="text" placeholder="Email" v-model="email" />
-
       <input type="password" placeholder="Password" v-model="password" />
 
-      <button @click="handleSignup">登録</button>
+      <a-button text="サインアップ" :onClick="handleSignup"></a-button>
     </div>
   </div>
 </template>
