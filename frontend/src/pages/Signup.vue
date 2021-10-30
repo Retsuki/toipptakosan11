@@ -1,8 +1,8 @@
 <template>
   <div :class="$style.wrapper">
     <div :class="$style.contents">
-      <input type="text" placeholder="Email" v-model="email" />
-      <input type="password" placeholder="Password" v-model="password" />
+      <a-input type="text" placeholder="Email" v-model="email" />
+      <a-input type="password" placeholder="Password" v-model="password" />
 
       <a-button text="サインアップ" :onClick="handleSignup"></a-button>
     </div>
