@@ -28,7 +28,8 @@ export default defineComponent({
 
 <style lang="scss" module>
 .input {
-  width: 100%;
-  height: 100%;
+  border: $border;
+  border-radius: $radius;
+  padding: 10px;
 }
 </style>

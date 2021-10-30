@@ -1,10 +1,25 @@
 <template>
   <div :class="$style.wrapper">
     <div :class="$style.contents">
-      <a-input type="text" placeholder="Email" v-model="email" />
-      <a-input type="password" placeholder="Password" v-model="password" />
+      <a-input
+        type="text"
+        placeholder="Email"
+        v-model="email"
+        :class="$style.content"
+      />
 
-      <a-button text="サインアップ" :onClick="handleSignup"></a-button>
+      <a-input
+        type="password"
+        placeholder="Password"
+        v-model="password"
+        :class="$style.content"
+      />
+
+      <a-button
+        text="サインアップ"
+        :onClick="handleSignup"
+        :class="$style.button"
+      ></a-button>
     </div>
   </div>
 </template>
@@ -34,9 +49,20 @@ export default defineComponent({
 }
 
 .contents {
+  width: 250px;
   padding: 30px 0;
-  display: grid;
-  grid-template-rows: repeat(3, 30px);
-  row-gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  height: 28px;
+  margin-bottom: 15px;
+}
+
+.button {
+  padding: 16px;
+  color: $color-white;
+  background-color: $color-black;
 }
 </style>
