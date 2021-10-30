@@ -9,6 +9,9 @@
           <li>
             <router-link to="/member" :class="$style.link">member</router-link>
           </li>
+          <li>
+            <router-link to="/signup" :class="$style.link">signup</router-link>
+          </li>
           <!-- <li><router-link to="/member" :class="$style.link">jobs</router-link></li> -->
           <!-- <li><router-link to="/member" :class="$style.link">about</router-link></li> -->
         </ul>

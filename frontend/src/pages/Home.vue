@@ -18,10 +18,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import OGlobalHeader from '../components/organisms/OGlobalHeader.vue'
 
 export default defineComponent({
-  components: { OGlobalHeader },
   setup() {
     return {}
   },

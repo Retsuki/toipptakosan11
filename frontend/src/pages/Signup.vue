@@ -1,12 +1,11 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.contents">
-      <input type="text" placeholder="Email" v-model="email" />
-
-      <input type="password" placeholder="Password" v-model="password" />
-
-      <button @click="handleSignup">登録</button>
-    </div>
+    <m-auth
+      v-model:email="email"
+      v-model:password="password"
+      button-text="サインアップ"
+      :on-click="handleSignup"
+    />
   </div>
 </template>
 
@@ -32,12 +31,5 @@ export default defineComponent({
   height: 100%;
   display: flex;
   justify-content: center;
-}
-
-.contents {
-  padding: 30px 0;
-  display: grid;
-  grid-template-rows: repeat(3, 30px);
-  row-gap: 15px;
 }
 </style>

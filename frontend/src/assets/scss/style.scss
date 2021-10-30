@@ -1,3 +1,22 @@
+// カラー
+$color-white: #ffffff;
+$color-black: #000;
+$color-base: $color-black;
+$color-line: #666666;
+
+// ボーダー
+$line-width: 1px;
+$line-style: solid;
+$radius: 2px;
+$border: $line-width $line-style $color-line;
+
+// フォント
+$font-size-s: 0.8rem;
+$font-size-m: 1rem;
+$font-size-l: 1.2rem;
+$font-weight-default: 400;
+$fonnt-weight-bold: 700;
+
 body {
   margin: 0;
 }
@@ -11,4 +30,8 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+input {
+  outline: none;
 }
