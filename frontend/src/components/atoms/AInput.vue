@@ -17,6 +17,11 @@ export default defineComponent({
       type: String,
       default: 'text',
     },
+    name: {
+      type: String,
+      default: '',
+      required: false,
+    },
     placeholder: {
       type: String,
       default: '',
