@@ -12,6 +12,11 @@
           <li>
             <router-link to="/signup" :class="$style.link">signup</router-link>
           </li>
+          <li>
+            <router-link to="/profile" :class="$style.link"
+              >profile</router-link
+            >
+          </li>
           <!-- <li><router-link to="/member" :class="$style.link">jobs</router-link></li> -->
           <!-- <li><router-link to="/member" :class="$style.link">about</router-link></li> -->
         </ul>
