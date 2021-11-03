@@ -30,7 +30,7 @@ export default defineComponent({
       required: true,
     },
     items: {
-      type: Array as PropType<Array<string>>,
+      type: Array as PropType<Array<string | number>>,
       required: true,
     },
     modelValue: {
