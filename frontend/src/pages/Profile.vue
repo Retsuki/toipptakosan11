@@ -1,56 +1,97 @@
 <template>
   <div :class="$style.wrapper">
-    <m-label-input v-model="name" label-text="名前" flex-column />
+    <a-heading :level="1" :class="$style.content"> プロフィール設定 </a-heading>
 
-    <div>
-      <span>職種</span>
-      <select id="" name=""></select>
-    </div>
+    <m-label-input
+      v-model="name"
+      label-text="名前"
+      placeholder="Rちゃん"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <span>自己紹介</span>
-      <textarea id="" name="" cols="30" rows="10"></textarea>
-    </div>
+    <m-label-textarea
+      v-model="self_introduction"
+      label-text="自己紹介"
+      placeholder="箇条書きで気軽にできること or 多分できることを書きましょう。&#13;&#13;・Vue出来ます&#13;&#13;・Nuxt出来ます&#13;&#13;・GCP（build, run, redis）出来ます"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
     <m-label-input
       v-model="company"
-      label-text="現在勤めている会社"
+      label-text="現在勤めている会社・学校"
+      placeholder="Stack Industleee inc"
       flex-column
+      :margin="6"
+      :class="$style.content"
     />
 
-    <div>
-      <span>実務経験年数</span>
-      <select id="" name=""></select>
-    </div>
+    <m-label-select
+      v-model="occupation"
+      label-text="職種"
+      :items="occupations"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <m-label-input v-model="company" label-text="facebook" flex-column />
-      <m-label-input v-model="company" label-text="twitter" flex-column />
-      <m-label-input v-model="company" label-text="github" flex-column />
-    </div>
+    <m-label-select
+      v-model="experience_year"
+      label-text="実務経験年数"
+      :items="experienseYearItems"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <m-label-input v-model="company" label-text="会社名" flex-column />
-      <m-label-input v-model="company" label-text="入社日" flex-column />
-      <m-label-input v-model="company" label-text="退社日" flex-column />
-      <div>
-        <span>仕事内容</span>
-        <textarea id="" name="" cols="30" rows="10"></textarea>
-      </div>
-      <div>
-        <span>使用言語</span>
-        <select id="" name=""></select>
-      </div>
-      <div>
-        <span>ポジション</span>
-        <select id="" name=""></select>
-      </div>
-    </div>
+    <m-label-input
+      v-model="sns.facebook"
+      label-text="Facebook"
+      placeholder="https://www.facebook.com/profile.php?id=100007980480408"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
+
+    <m-label-input
+      v-model="sns.twitter"
+      label-text="Twitter"
+      placeholder="https://twitter.com/duz_mk"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
+
+    <m-label-input
+      v-model="sns.github"
+      label-text="Github"
+      placeholder="https://github.com/Retsuki"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
+
+const occupations = [
+  'ソフトウェアエンジニア',
+  'iOSエンジニア',
+  'Androidエンジニア',
+]
+
+const experienseYearItems = [
+  '未経験',
+  '１年未満',
+  '１年〜３年',
+  '３年〜５年',
+  '５年以上',
+]
 
 export default defineComponent({
   setup() {
@@ -59,18 +100,17 @@ export default defineComponent({
       occupation: '',
       self_introduction: '',
       company: '',
-      experience_year: 0,
-      profile_image: '',
+      experience_year: '',
       sns: {
         facebook: '',
         twitter: '',
         github: '',
       },
-      experience: [],
-      skills: [],
     })
     return {
       ...toRefs(profile),
+      occupations,
+      experienseYearItems,
     }
   },
 })
@@ -78,16 +118,16 @@ export default defineComponent({
 
 <style lang="scss" module>
 .wrapper {
-  width: 300;
+  width: 300px;
   height: 100%;
-  margin: auto;
+  margin: 30px auto 60px;
 
   @media (min-width: 768px) {
     width: 600px;
   }
+}
 
-  @media (min-width: 1024px) {
-    width: 1200px;
-  }
+.content {
+  margin-bottom: 24px;
 }
 </style>
