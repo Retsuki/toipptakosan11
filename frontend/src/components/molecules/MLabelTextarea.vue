@@ -12,6 +12,7 @@
     <a-textarea
       name="labelTextarea"
       :class="$style.textarea"
+      :placeholder="placeholder"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
     />

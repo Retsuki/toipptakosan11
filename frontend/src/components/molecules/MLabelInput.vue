@@ -11,6 +11,7 @@
     </label>
     <a-input
       name="labelInput"
+      :placeholder="placeholder"
       :class="$style.input"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.currentTarget)"

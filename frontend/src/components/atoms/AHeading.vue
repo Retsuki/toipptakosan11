@@ -26,7 +26,6 @@ export default defineComponent({
   font-weight: $fonnt-weight-bold;
   line-height: 1.5;
 }
-
 .h1 {
   font-size: 2rem;
 }
