@@ -6,13 +6,12 @@
       { [$style.flexColumn]: flexColumn },
     ]"
   >
-    <label for="labelInput" :class="$style.label" :style="styleComputed">
+    <label for="labelInput" :style="styleComputed">
       {{ labelText }}
     </label>
     <a-input
       name="labelInput"
       :placeholder="placeholder"
-      :class="$style.input"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.currentTarget)"
     />
