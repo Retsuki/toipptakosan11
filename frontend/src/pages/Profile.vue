@@ -14,16 +14,7 @@
     <m-label-textarea
       v-model="self_introduction"
       label-text="自己紹介"
-      placeholder="箇条書きで気軽にできること or 多分できることを書きましょう。&#13;&#13;・Vue出来ます&#13;&#13;・Nuxt出来ます&#13;&#13;・GCP（build, run, redis）出来ます"
-      flex-column
-      :margin="6"
-      :class="$style.content"
-    />
-
-    <m-label-input
-      v-model="company"
-      label-text="現在勤めている会社・学校"
-      placeholder="Stack Industleee inc"
+      placeholder="箇条書きでできること、できるかもしれないことを書きましょう。&#13;&#13;・Vue出来ます&#13;&#13;・Nuxt出来ます&#13;&#13;・GCP（build, run, redis）出来ます"
       flex-column
       :margin="6"
       :class="$style.content"
@@ -33,15 +24,6 @@
       v-model="occupation"
       label-text="職種"
       :items="occupations"
-      flex-column
-      :margin="6"
-      :class="$style.content"
-    />
-
-    <m-label-select
-      v-model="experience_year"
-      label-text="実務経験年数"
-      :items="experienseYearItems"
       flex-column
       :margin="6"
       :class="$style.content"
