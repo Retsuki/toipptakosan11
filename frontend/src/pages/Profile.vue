@@ -14,7 +14,7 @@
     <m-label-textarea
       v-model="self_introduction"
       label-text="自己紹介"
-      placeholder="箇条書きでできること、できるかもしれないことを書きましょう。&#13;&#13;・Vue出来ます&#13;&#13;・Nuxt出来ます&#13;&#13;・GCP（build, run, redis）出来ます"
+      :placeholder="textareaPlaceholder"
       flex-column
       :margin="6"
       :class="$style.content"
@@ -61,18 +61,13 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue'
 
+const textareaPlaceholder =
+  '箇条書きでできることや好きなことを書いてみましょう。\n\n・Vue, Nuxt出来ます\n\n・Frontend大好き'
+
 const occupations = [
   'ソフトウェアエンジニア',
   'iOSエンジニア',
   'Androidエンジニア',
-]
-
-const experienseYearItems = [
-  '未経験',
-  '１年未満',
-  '１年〜３年',
-  '３年〜５年',
-  '５年以上',
 ]
 
 export default defineComponent({
@@ -81,8 +76,6 @@ export default defineComponent({
       name: '',
       occupation: '',
       self_introduction: '',
-      company: '',
-      experience_year: '',
       sns: {
         facebook: '',
         twitter: '',
@@ -92,7 +85,7 @@ export default defineComponent({
     return {
       ...toRefs(profile),
       occupations,
-      experienseYearItems,
+      textareaPlaceholder,
     }
   },
 })
