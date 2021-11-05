@@ -55,6 +55,8 @@
       :margin="6"
       :class="$style.content"
     />
+
+    <a-button text="保存する" :class="$style.button" />
   </div>
 </template>
 
@@ -104,5 +106,10 @@ export default defineComponent({
 
 .content {
   margin-bottom: 24px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 30px;
 }
 </style>
