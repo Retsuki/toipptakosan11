@@ -16,11 +16,7 @@
       @input="$emit('update:password', $event.target.value)"
     />
 
-    <a-button
-      :text="buttonText"
-      :on-click="onClick"
-      :class="$style.button"
-    ></a-button>
+    <a-button :text="buttonText" :on-click="onClick"></a-button>
   </div>
 </template>
 
@@ -61,11 +57,5 @@ export default defineComponent({
 .content {
   height: 28px;
   margin-bottom: 15px;
-}
-
-.button {
-  padding: 16px;
-  color: $color-white;
-  background-color: $color-black;
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
-  <input
-    :type="type"
-    :placeholder="placeholder"
-    :class="$style.input"
+  <select
+    :name="name"
+    :class="$style.select"
     :value="modelValue"
-    @input="$emit('update:modelValue', $event.currentTarget)"
-  />
+    @change="$emit('update:modelValue', $event.currentTarget)"
+  >
+    <option value="">--選択してください--</option>
+    <slot />
+  </select>
 </template>
 
 <script lang="ts">
@@ -13,30 +15,26 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    type: {
-      type: String,
-      default: 'text',
-    },
     name: {
       type: String,
       default: '',
       required: false,
     },
-    placeholder: {
-      type: String,
-      default: '',
-    },
     modelValue: {
-      type: String,
-      required: true,
+      type: [String, Number],
+      default: '',
+      required: false,
     },
   },
   emits: ['update:modelValue'],
+  setup() {
+    return {}
+  },
 })
 </script>
 
 <style lang="scss" module>
-.input {
+.select {
   border: $border;
   border-radius: $radius;
   padding: 10px;

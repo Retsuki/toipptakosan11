@@ -1,90 +1,115 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.labelInput">
-      <span>名前</span>
-      <input type="text" />
-    </div>
+    <a-heading :level="1" :class="$style.content"> プロフィール設定 </a-heading>
 
-    <div>
-      <span>職種</span>
-      <select name="" id=""></select>
-    </div>
+    <m-label-input
+      v-model="name"
+      label-text="名前"
+      placeholder="Rちゃん"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <span>自己紹介</span>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-    </div>
+    <m-label-textarea
+      v-model="self_introduction"
+      label-text="自己紹介"
+      :placeholder="textareaPlaceholder"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div :class="$style.labelInput">
-      <span>現在勤めている会社</span>
-      <input type="text" />
-    </div>
+    <m-label-select
+      v-model="occupation"
+      label-text="職種"
+      :items="occupations"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <span>実務経験年数</span>
-      <select name="" id=""></select>
-    </div>
+    <m-label-input
+      v-model="sns.facebook"
+      label-text="Facebook"
+      placeholder="https://www.facebook.com/profile.php?id=100007980480408"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <div :class="$style.labelInput">
-        <span>facebook</span>
-        <input type="text" />
-      </div>
-      <div :class="$style.labelInput">
-        <span>twitter</span>
-        <input type="text" />
-      </div>
-      <div :class="$style.labelInput">
-        <span>github</span>
-        <input type="text" />
-      </div>
-    </div>
+    <m-label-input
+      v-model="sns.twitter"
+      label-text="Twitter"
+      placeholder="https://twitter.com/duz_mk"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
 
-    <div>
-      <div :class="$style.labelInput">
-        <span>会社名</span>
-        <input type="text" />
-      </div>
-      <div :class="$style.labelInput">
-        <span>入社日</span>
-        <input type="text" />
-      </div>
-      <div :class="$style.labelInput">
-        <span>退社日</span>
-        <input type="text" />
-      </div>
-      <div>
-        <span>仕事内容</span>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-      </div>
-      <div>
-        <span>使用言語</span>
-        <select name="" id=""></select>
-      </div>
-      <div>
-        <span>ポジション</span>
-        <select name="" id=""></select>
-      </div>
-    </div>
+    <m-label-input
+      v-model="sns.github"
+      label-text="Github"
+      placeholder="https://github.com/Retsuki"
+      flex-column
+      :margin="6"
+      :class="$style.content"
+    />
+
+    <a-button text="保存する" :class="$style.button" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, reactive, toRefs } from 'vue'
+
+const textareaPlaceholder =
+  '箇条書きでできることや好きなことを書いてみましょう。\n\n・Vue, Nuxt出来ます\n\n・Frontend大好き'
+
+const occupations = [
+  'ソフトウェアエンジニア',
+  'iOSエンジニア',
+  'Androidエンジニア',
+]
 
 export default defineComponent({
   setup() {
-    return {}
+    const profile = reactive({
+      name: '',
+      occupation: '',
+      self_introduction: '',
+      sns: {
+        facebook: '',
+        twitter: '',
+        github: '',
+      },
+    })
+    return {
+      ...toRefs(profile),
+      occupations,
+      textareaPlaceholder,
+    }
   },
 })
 </script>
 
 <style lang="scss" module>
 .wrapper {
-  width: 100%;
+  width: 300px;
   height: 100%;
+  margin: 30px auto 60px;
+
+  @media (min-width: 768px) {
+    width: 600px;
+  }
 }
 
-.labelInput {
+.content {
+  margin-bottom: 24px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 30px;
 }
 </style>

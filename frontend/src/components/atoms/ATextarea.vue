@@ -1,11 +1,11 @@
 <template>
-  <input
-    :type="type"
+  <textarea
+    :name="name"
+    :cols="cols"
+    :rows="rows"
     :placeholder="placeholder"
-    :class="$style.input"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.currentTarget)"
-  />
+    :class="$style.textarea"
+  ></textarea>
 </template>
 
 <script lang="ts">
@@ -13,14 +13,18 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    type: {
-      type: String,
-      default: 'text',
-    },
     name: {
       type: String,
       default: '',
       required: false,
+    },
+    rows: {
+      type: Number,
+      default: 10,
+    },
+    cols: {
+      type: Number,
+      default: 30,
     },
     placeholder: {
       type: String,
@@ -31,12 +35,14 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: ['update:modelValue'],
+  setup() {
+    return {}
+  },
 })
 </script>
 
 <style lang="scss" module>
-.input {
+.textarea {
   border: $border;
   border-radius: $radius;
   padding: 10px;

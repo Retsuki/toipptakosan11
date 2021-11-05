@@ -1,9 +1,13 @@
-# [R-World](https://toipptakosan11-71185.web.app/)
+# [Archtecture-World](https://toipptakosan11-71185.web.app/)
 
-## R-World(R ちゃんワールド)について
+## Archtecture-World について
 
-- 技術集団を作る予定
-- 人が足りていないスタートアップの支援を行う予定
+- 構築してきた or 知っている設計（構成図）を共有するアプリ
+
+## なぜ共有するのか
+
+- 共有することでジュニア層に知見を流す
+- CTO やテックリードがいないスタートアップの助けになる
 
 ## 技術スタック
 
