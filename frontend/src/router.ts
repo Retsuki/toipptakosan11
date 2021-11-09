@@ -5,6 +5,9 @@ import MemberDetail from './pages/MemberDetail.vue'
 import Login from './pages/Login.vue'
 import Signup from './pages/Signup.vue'
 import Profile from './pages/Profile.vue'
+import Route from './pages/Route.vue'
+import Architecures from './pages/Architectures.vue'
+import ArchitecureWrite from './pages/ArchitectureWrite.vue'
 
 const routes = [
   {
@@ -32,7 +35,19 @@ const routes = [
   {
     path: '/profile',
     component: Profile,
-  }
+  },
+  {
+    path: '/route',
+    component: Route,
+  },
+  {
+    path: '/architectures',
+    component: Architecures,
+  },
+  {
+    path: '/architecture-write',
+    component: ArchitecureWrite,
+  },
 ]
 
 export const router = createRouter({
