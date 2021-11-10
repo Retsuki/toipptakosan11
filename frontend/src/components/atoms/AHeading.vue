@@ -23,7 +23,7 @@ export default defineComponent({
 
 <style lang="scss" module>
 .h {
-  font-weight: $fonnt-weight-bold;
+  font-weight: $font-weight-bold;
   line-height: 1.5;
 }
 .h1 {
