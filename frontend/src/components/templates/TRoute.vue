@@ -1,25 +1,24 @@
 <template>
-  <t-route :cards="cards" />
+  <div :class="$style.wrapper">
+    <o-route-cards :cards="cards" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+
+interface RouteCard {
+  link: string
+  src: string
+  text: string
+}
 
 export default defineComponent({
-  setup() {
-    const cards = [
-      {
-        link: '/architectures',
-        src: 'src/assets/images/facebook-brands.svg',
-        text: '設計一覧へ',
-      },
-      {
-        link: '/architecture-write',
-        src: 'src/assets/images/facebook-brands.svg',
-        text: '設計図をシェアする',
-      },
-    ]
-    return { cards }
+  props: {
+    cards: {
+      type: Array as PropType<RouteCard[]>,
+      required: true,
+    },
   },
 })
 </script>
