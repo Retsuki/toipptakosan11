@@ -6,6 +6,8 @@
     :alt="alt"
     :class="[
       {
+        [$style.width]: !width,
+        [$style.height]: !height,
         [$style.circle]: circle,
       },
     ]"
@@ -23,11 +25,11 @@ export default defineComponent({
     },
     width: {
       type: String,
-      default: '150',
+      require: false,
     },
     height: {
       type: String,
-      default: '150',
+      require: false,
     },
     alt: {
       type: String,
@@ -42,6 +44,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" module>
+.width {
+  width: 100%;
+}
+.height {
+  height: 100%;
+}
 .circle {
   border-radius: $circle;
 }
