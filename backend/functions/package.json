@@ -37,11 +37,11 @@
     "ts-morph": "12.0.0"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.2.1",
-    "@graphql-codegen/introspection": "2.1.0",
-    "@graphql-codegen/typescript": "2.2.4",
-    "@graphql-codegen/typescript-document-nodes": "2.1.6",
-    "@graphql-codegen/typescript-resolvers": "2.3.2",
+    "@graphql-codegen/cli": "2.16.5",
+    "@graphql-codegen/introspection": "2.2.3",
+    "@graphql-codegen/typescript": "2.8.8",
+    "@graphql-codegen/typescript-document-nodes": "2.3.13",
+    "@graphql-codegen/typescript-resolvers": "2.7.13",
     "@typescript-eslint/eslint-plugin": "5.1.0",
     "@typescript-eslint/parser": "5.1.0",
     "eslint": "7.32.0",
